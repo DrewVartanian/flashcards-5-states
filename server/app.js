@@ -12,6 +12,8 @@ var publicPath = path.join(__dirname, '../public');
 // The path of our index.html file. ([ROOT]/index.html)
 var indexHtmlPath = path.join(__dirname, '../index.html');
 
+var bowerPath = path.join(__dirname,'../bower_components');
+
 // http://nodejs.org/docs/latest/api/globals.html#globals_dirname
 // for more information about __dirname
 
@@ -21,6 +23,7 @@ var indexHtmlPath = path.join(__dirname, '../index.html');
 // When our server gets a request and the url matches
 // something in our public folder, serve up that file
 // e.g. angular.js, style.css
+app.use('/bower_components',express.static(bowerPath));
 app.use(express.static(publicPath));
 
 app.use(bodyParser.json());
