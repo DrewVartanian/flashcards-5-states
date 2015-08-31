@@ -20,10 +20,26 @@ app.config(function($stateProvider){
     controller: 'MainController'
   }).state('manageCard',{
     url: '/manageCard/:id',
+    templateUrl: '/views/manageCard.html',
+    controller: function($scope, $stateParams){
+      $scope.cardId = $stateParams.id;
+    }
+  }).state('manageCard.edit',{
+    url: '/edit/',
     templateUrl: '/views/edit_card.html',
-    controller: 'EditCardController',
-    children: [
-
-    ]
+    controller: 'EditCardController'
+  }).state('manageCard.delete',{
+    url: '/manageCard/delete/:id',
+    templateUrl: '/views/delete_card.html',
+    controller: 'DeleteCardController'
   });
+      // {
+      //   name: 'edit',
+      //   templateUrl: '/views/edit_card.html',
+      //   controller: 'EditCardController',
+      // },
+      // {
+      //   name: 'delete',
+      //   templateUrl: ''
+      // }
 });

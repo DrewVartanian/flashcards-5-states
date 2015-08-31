@@ -63,6 +63,24 @@ app.post('/cards', function (req, res, next) {
     .then(null, next);
 });
 
+app.get('/card/:id', function (req, res, next){
+    FlashCardModel.findById(req.params.id).exec()
+    .then(function (card) {
+        res.json(card);
+    })
+    .then(null, next);
+});
+
+app.delete('/card/:id', function (req, res, next){
+    FlashCardModel.findById(req.params.id).remove()
+    .then(function (card) {
+        res.send('card deleted');
+    })
+    .then(null, function(err){
+        res.send('delete failed');
+    });
+});
+
 app.put('/cards/:id', function (req, res, next) {
     // FlashCardModel.findByIdAndUpdate(req.params.id, req.body).exec()
     // .then(function (updatedCard) {

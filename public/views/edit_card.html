@@ -1,4 +1,4 @@
-<div class="flash-card">
+<div>
   <h1>Edit flash card</h1>
     <form name="cardForm" ng-submit="cardForm.$valid && saveCard()" novalidate>
         <h3>question</h3>
@@ -20,5 +20,6 @@
             <input type="text" name="answer{{$index}}" ng-model="answer.text" ng-maxlength="40">
         </div>
         <button type="submit">Save</button>
+        <!-- <button ui-sref=''>Delete</button> -->
     </form>
 </div>
