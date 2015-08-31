@@ -11,6 +11,11 @@
 </head>
 
 <body ng-app="flashCards" ng-cloak>
+    <nav>
+        <a ui-sref='stats'>stats</a> | 
+        <a ui-sref='newCard'>new card</a> | 
+        <a ui-sref='cards'>cards</a>
+    </nav>
     <ui-view></ui-view>
     <!-- <div ng-controller="StatsController" id="statistics">
         <div id="scoreboard">

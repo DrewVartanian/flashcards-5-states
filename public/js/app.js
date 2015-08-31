@@ -5,7 +5,7 @@ app.value('currentFlashCards', []);
 app.config(function($stateProvider){
   $stateProvider.state('home',{
     url: '/',
-    templateUrl: '/views/home.html'
+    templateUrl: '/views/home.html',
   }).state('stats',{
     url: '/stats',
     templateUrl: '/views/stats.html',
@@ -18,5 +18,12 @@ app.config(function($stateProvider){
     url: '/cards',
     templateUrl: '/views/cards.html',
     controller: 'MainController'
+  }).state('manageCard',{
+    url: '/manageCard',
+    templateUrl: '/views/new_card.html',
+    controller: 'EditCardController',
+    children: [
+
+    ]
   });
 });

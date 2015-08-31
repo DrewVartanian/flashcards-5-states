@@ -1,5 +1,13 @@
-app.controller('EditCardController', function ($scope, FlashCardsFactory) {
+app.controller('EditCardController', function ($scope, FlashCardsFactory, $state, $stateParams) {
 	$scope.categories = FlashCardsFactory.categories;
+	console.log($state);
+	$scope.newCard = {
+		    question: $stateParams.questions,
+		    category: $stateParams.categories,
+		    answers: $stateParams.answers
+		};
+	// $scope.state = $state.current;
+	// $scope.params = $stateParams;
 	$scope.saveCard = function () {
 		FlashCardsFactory.updateCard($scope.card)
 		.then(function (updatedCard) {
