@@ -1,6 +1,6 @@
 app.controller('EditCardController', function ($scope, FlashCardsFactory, $state, $stateParams) {
 	$scope.categories = FlashCardsFactory.categories;
-	console.log($state);
+  console.log($stateParams);
 	$scope.newCard = {
 		    question: $stateParams.questions,
 		    category: $stateParams.categories,

@@ -19,8 +19,8 @@ app.config(function($stateProvider){
     templateUrl: '/views/cards.html',
     controller: 'MainController'
   }).state('manageCard',{
-    url: '/manageCard',
-    templateUrl: '/views/new_card.html',
+    url: '/manageCard/:id',
+    templateUrl: '/views/edit_card.html',
     controller: 'EditCardController',
     children: [
 

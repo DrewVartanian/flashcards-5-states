@@ -25,6 +25,11 @@ app.factory('FlashCardsFactory', function ($http, currentFlashCards) {
       return currentFlashCards;
     });
   }
+  function getFlashCard (id){
+    return $http.get('/card/'+id).then(function(response){
+      return response.data;
+    });
+  }
   function createFlashCard (card) {
     return $http.post('/cards', card)
     .then(function (response) {
